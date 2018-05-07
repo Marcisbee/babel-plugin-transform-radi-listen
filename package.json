@@ -1,6 +1,6 @@
 {
   "name": "babel-plugin-transform-radi-listen",
-  "version": "0.3.0",
+  "version": "0.3.1",
   "description": "Transforms state variables in JSX to radi listeners",
   "main": "src/index.js",
   "scripts": {
