@@ -77,6 +77,11 @@ module.exports = declare(({types: t}, options) => {
       },
       JSXExpressionContainer(path) {
         if (!path) return;
+        path.traverse({
+          ThisExpression(thisPath) {
+            thisPath.replaceWith(t.identifier('component'));
+          }
+        });
         // Handle object attribute like { style: { color: ... } }
         if (t.isObjectExpression(path.node.expression) && t.isJSXAttribute(path.parent)) {
 
